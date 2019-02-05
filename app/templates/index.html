@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block headmeta %}
+	<title>Flask Real Time!</title>
+{% endblock %}
+{% block scripts %}
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+    <script type='text/javascript' src="{{ url_for('static',filename='js/index.js') }}"></script>
+{% endblock %}
+{% block css %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block content %}
+<div class='flex-column center'>
+    <h1 class='text-center hilight-fg text-shadow'>A real time flask app! 🚀</h1>
+    <div class='flex'>
+        <div id='button' class="flex margin-half small-box cursor light-mid-bg hilight-fg box-shadow text-shadow flex center">Send Message</div>
+        <div id='clear-button' class="flex margin-half small-box cursor mid-dark-bg hilight-fg box-shadow text-shadow flex center">Clear Messages</div>
+    </div>
+    <input id='text-input' class='small-box box-shadow' placeholder='type a message here!' type='text'>
+    <div id='responses'class='flex-wrap flex'>
+</div>
+{% endblock %}
