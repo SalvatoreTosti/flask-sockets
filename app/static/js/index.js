@@ -1,7 +1,7 @@
 $.socket = new Object()
 
 $(document).ready(function(){
-    $.socket = io.connect('http://' + document.domain + ':' + location.port + '/socket'); //set up a socket for later usage
+    $.socket = io.connect('https://' + document.domain + ':' + location.port + '/socket'); //set up a socket for later usage
     $.socket.on('message-response', function(msg) {
         newDiv = $( "<div />" ).text(msg['text']) //create a new div with response text
         .addClass('small-box light-mid-bg hilight-fg box-shadow text-shadow') //styling
